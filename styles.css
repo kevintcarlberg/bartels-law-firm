@@ -640,6 +640,22 @@ body {
     display: block;
 }
 
+.advantage-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--accent-gold);
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(212, 165, 116, 0.3));
+    transition: var(--transition);
+}
+
+.advantage-card:hover .advantage-icon svg {
+    stroke: var(--accent-gold);
+    filter: drop-shadow(0 4px 16px rgba(212, 165, 116, 0.5));
+    transform: scale(1.1);
+}
+
 .advantage-card h3 {
     font-size: 1.4rem;
     color: var(--text-primary);
