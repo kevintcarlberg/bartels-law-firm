@@ -355,9 +355,8 @@ body {
 .scroll-indicator {
     text-align: center;
     padding: 3rem 0;
-    animation: fadeInUp 1s ease-out 1s both;
-}
-
+    background: var(--primary-dark);
+}\n
 .scroll-indicator span {
     display: block;
     font-size: 0.75rem;
@@ -365,6 +364,16 @@ body {
     letter-spacing: 0.1em;
     margin: 0 auto 0.5rem;
     text-transform: uppercase;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite;
 }
 
 .scroll-arrow {
