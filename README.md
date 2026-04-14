@@ -8,14 +8,15 @@ This website showcases the expertise and authority of Jeremy Bartels and The Bar
 
 ### Key Features
 
-- **Powerful, Authoritative Design**: Dark, commanding color scheme with premium gold accents
-- **Professional Photography**: High-quality images that convey expertise and success
-- **Proven Results Showcase**: $50M+ recovered, highlighting real victories
-- **Client Testimonials**: Social proof from satisfied clients
-- **Enhanced Credentials Display**: BigLaw experience and elite qualifications
+- **Professional, Authoritative Design**: Sophisticated dark color scheme with premium gold accents
+- **Comprehensive About Page**: Detailed biography showcasing Jeremy's extensive background and credentials
+- **Client Photography**: Professional headshot and images from the firm
+- **Representative Results**: Real achievements including 98% prosecution conviction rate and undefeated trial record
+- **Client Testimonials**: Authentic testimonials from satisfied clients
+- **Enhanced Credentials Display**: Judge Pro Tempore, former prosecutor, cum laude graduate
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
 - **Smooth Animations**: Engaging scroll animations and transitions
-- **Strategic Copywriting**: Powerful, confidence-inspiring language
+- **Professional Copywriting**: Serious, confident language appropriate for a respected law firm
 - **Contact Form**: Easy-to-use contact form for potential clients
 - **Accessibility**: Keyboard navigation and ARIA labels
 - **Performance Optimized**: Fast loading with debounced scroll handlers
