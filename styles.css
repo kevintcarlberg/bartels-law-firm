@@ -434,6 +434,12 @@ body {
     align-items: start;
 }
 
+.about-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .about-image {
     position: relative;
     border-radius: 8px;
@@ -455,12 +461,7 @@ body {
 }
 
 .image-badge {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    right: 2rem;
-    background: rgba(10, 22, 40, 0.95);
-    backdrop-filter: blur(10px);
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--accent-gold);
