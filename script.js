@@ -444,7 +444,12 @@ window.addEventListener('scroll', () => {
 // TRUST STATS COUNTER ANIMATION
 // ===================================
 
+let countersAnimated = false;
+
 function animateCounters() {
+    if (countersAnimated) return; // Only animate once
+    countersAnimated = true;
+    
     const trustStatNumbers = document.querySelectorAll('.trust-stat-number');
     
     trustStatNumbers.forEach(stat => {
@@ -452,6 +457,9 @@ function animateCounters() {
         const duration = 2000; // 2 seconds
         const increment = target / (duration / 16); // 60fps
         let current = 0;
+        
+        // Start from 0
+        stat.textContent = '0';
         
         const updateCounter = () => {
             current += increment;
@@ -477,7 +485,7 @@ if (trustSection) {
                 trustObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 }); // Lower threshold so it triggers earlier
     
     trustObserver.observe(trustSection);
 }

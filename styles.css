@@ -683,13 +683,31 @@ body {
 }
 
 .disadvantage {
-    color: rgba(255, 150, 150, 0.7);
+    display: block;
+    color: rgba(255, 150, 150, 0.8);
     font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.disadvantage::before {
+    content: '× ';
+    font-style: normal;
+    font-weight: bold;
+    margin-right: 0.25rem;
 }
 
 .advantage-highlight {
+    display: block;
     color: var(--text-primary);
     font-weight: 500;
+}
+
+.advantage-highlight::before {
+    content: '✓ ';
+    color: var(--accent-gold);
+    font-weight: bold;
+    margin-right: 0.25rem;
 }
 
 .advantage-summary {
