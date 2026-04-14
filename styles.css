@@ -193,7 +193,7 @@ body {
     justify-content: center;
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 50%, var(--primary-blue) 100%);
     overflow: hidden;
-    padding-top: 100px;
+    padding: 120px 0 80px 0;
 }
 
 .hero-image {
@@ -248,6 +248,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.15em;
     margin-bottom: 2rem;
+    margin-top: 1rem;
     animation: fadeInDown 1s ease-out;
 }
 
@@ -356,6 +357,8 @@ body {
     text-align: center;
     padding: 3rem 0;
     background: var(--primary-dark);
+    width: 100%;
+    display: block;
 }
 
 .scroll-indicator span {
@@ -365,6 +368,7 @@ body {
     letter-spacing: 0.1em;
     margin: 0 auto 0.5rem;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .scroll-arrow {
@@ -1597,6 +1601,16 @@ body {
     :root {
         --section-padding: 4rem 0;
         --container-padding: 0 1.25rem;
+    }
+    
+    .hero {
+        padding: 140px 0 60px 0;
+    }
+    
+    .hero-badge {
+        font-size: 0.65rem;
+        padding: 0.4rem 1rem;
+        margin-top: 2rem;
     }
     
     .hero-stats {
