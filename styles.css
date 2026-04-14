@@ -356,7 +356,8 @@ body {
     text-align: center;
     padding: 3rem 0;
     background: var(--primary-dark);
-}\n
+}
+
 .scroll-indicator span {
     display: block;
     font-size: 0.75rem;
