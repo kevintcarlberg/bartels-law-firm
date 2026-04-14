@@ -217,7 +217,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 const animateOnScroll = document.querySelectorAll(
-    '.feature-card, .credential-item, .practice-card, .contact-item'
+    '.feature-card, .credential-item, .practice-card, .contact-item, .result-card, .testimonial-card, .membership-item'
 );
 
 animateOnScroll.forEach(el => {
@@ -292,9 +292,28 @@ const heroObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const statNumbers = document.querySelectorAll('.stat-number');
-            animateCounter(statNumbers[0], 17);
-            animateCounter(statNumbers[1], 500);
-            animateCounter(statNumbers[2], 100);
+            if (statNumbers.length >= 4) {
+                // Animate: 17+, $50M+, 500+, F500
+                statNumbers[0].textContent = '17+';
+                
+                // Animate $50M+
+                let millions = 0;
+                const millionTimer = setInterval(() => {
+                    millions += 2;
+                    if (millions >= 50) {
+                        statNumbers[1].textContent = '$50M+';
+                        clearInterval(millionTimer);
+                    } else {
+                        statNumbers[1].textContent = `$${millions}M+`;
+                    }
+                }, 40);
+                
+                // Animate 500+
+                animateCounter(statNumbers[2], 500);
+                
+                // F500 stays fixed
+                statNumbers[3].textContent = 'F500';
+            }
             heroObserver.unobserve(entry.target);
         }
     });
