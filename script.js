@@ -1,4 +1,21 @@
 // ===================================
+// SCROLL TO TOP ON PAGE LOAD
+// ===================================
+
+// Prevent browser from restoring scroll position
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// Scroll to top on page load/refresh
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
+// Also scroll to top immediately
+window.scrollTo(0, 0);
+
+// ===================================
 // NAVIGATION
 // ===================================
 
