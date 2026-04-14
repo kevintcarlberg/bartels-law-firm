@@ -35,6 +35,10 @@
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Modern gradients */
+    --gradient-gold: linear-gradient(135deg, #d4a574 0%, #f4d5a6 100%);
+    --gradient-shine: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
 
 html {
@@ -1615,5 +1619,244 @@ body {
     
     .section-title {
         font-size: 2rem;
+    }
+}
+
+/* ===================================
+   MODERN ENHANCEMENTS
+   =================================== */
+
+/* Trust Mini-Section */
+.trust-mini-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.trust-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trust-stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(212, 165, 116, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 165, 116, 0.15);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.trust-stat:hover {
+    transform: translateY(-8px);
+    background: rgba(212, 165, 116, 0.1);
+    border-color: rgba(212, 165, 116, 0.3);
+    box-shadow: 0 12px 40px rgba(212, 165, 116, 0.15);
+}
+
+.trust-stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+    font-family: var(--font-display);
+}
+
+.trust-stat-number::after {
+    content: '%';
+    font-size: 2rem;
+    margin-left: 0.25rem;
+}
+
+.trust-stat:first-child .trust-stat-number::after,
+.trust-stat:last-child .trust-stat-number::after {
+    content: '+';
+}
+
+.trust-stat-icon {
+    margin: 0 auto 1rem;
+}
+
+.trust-stat-icon svg {
+    stroke: var(--accent-gold);
+    fill: var(--accent-gold);
+    filter: drop-shadow(0 4px 12px rgba(212, 165, 116, 0.4));
+}
+
+.trust-stat-label {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.75rem;
+}
+
+/* Floating Contact Button */
+.floating-contact-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    animation: pulse 2s infinite;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(212, 165, 116, 0.6);
+}
+
+.floating-contact-btn svg {
+    stroke: var(--primary-dark);
+    fill: none;
+    width: 28px;
+    height: 28px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 24px rgba(212, 165, 116, 0.6), 0 0 0 12px rgba(212, 165, 116, 0.1);
+    }
+}
+
+/* Gradient Text Effect for Headlines */
+.hero-title {
+    background: linear-gradient(135deg, #ffffff 0%, #d4a574 50%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+.section-title .highlight {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Glassmorphism Effect on Cards */
+.advantage-card,
+.credential-item,
+.practice-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Enhanced Link Hover Effects */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Button Enhancement with Shimmer */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shine);
+    transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+/* Smooth Card Elevations */
+.results-card,
+.testimonial-card,
+.advantage-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.results-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(212, 165, 116, 0.25);
+}
+
+/* Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--gradient-gold);
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trust-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .trust-stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .floating-contact-btn {
+        bottom: 1rem;
+        right: 1rem;
+        width: 56px;
+        height: 56px;
     }
 }

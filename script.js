@@ -423,4 +423,63 @@ scrollTopBtn.addEventListener('mouseleave', () => {
     scrollTopBtn.style.transform = 'translateY(0)';
 });
 
+// ===================================
+// SCROLL PROGRESS INDICATOR
+// ===================================
+
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.pageYOffset;
+    const progress = (scrolled / documentHeight) * 100;
+    
+    if (scrollProgress) {
+        scrollProgress.style.width = progress + '%';
+    }
+});
+
+// ===================================
+// TRUST STATS COUNTER ANIMATION
+// ===================================
+
+function animateCounters() {
+    const trustStatNumbers = document.querySelectorAll('.trust-stat-number');
+    
+    trustStatNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const increment = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
+
+// Trigger trust stats animation when section comes into view
+const trustSection = document.querySelector('.trust-mini-section');
+if (trustSection) {
+    const trustObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                trustObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    trustObserver.observe(trustSection);
+}
+
 console.log('Bartels Law Firm website loaded successfully!');
