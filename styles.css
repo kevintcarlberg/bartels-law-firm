@@ -475,6 +475,13 @@ body {
     flex-shrink: 0;
 }
 
+.badge-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--accent-gold);
+    fill: none;
+}
+
 .badge-text {
     display: flex;
     flex-direction: column;
@@ -530,10 +537,10 @@ body {
     gap: 0.5rem;
 }
 
-.credential-badge .check {
-    color: var(--accent-gold);
-    font-weight: bold;
-    font-size: 1.1rem;
+.check-icon {
+    flex-shrink: 0;
+    stroke: var(--accent-gold);
+    fill: none;
 }
 
 .about-signature {
@@ -901,6 +908,12 @@ body {
     flex-shrink: 0;
 }
 
+.membership-icon svg {
+    stroke: var(--accent-gold);
+    fill: none;
+    filter: drop-shadow(0 2px 8px rgba(212, 165, 116, 0.2));
+}
+
 .membership-item h4 {
     color: var(--text-primary);
     font-size: 1.1rem;
@@ -1050,6 +1063,15 @@ body {
     padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
     font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.practice-check {
+    flex-shrink: 0;
+    stroke: var(--accent-gold);
+    fill: none;
 }
 
 /* ===================================
@@ -1212,6 +1234,19 @@ body {
     background: rgba(212, 165, 116, 0.1);
     border-radius: 8px;
     flex-shrink: 0;
+}
+
+.contact-icon svg {
+    stroke: var(--accent-gold);
+    fill: none;
+}
+
+.inline-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    stroke: var(--accent-gold);
+    fill: none;
 }
 
 .contact-item h4 {
