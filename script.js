@@ -380,7 +380,7 @@ scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
 scrollTopBtn.style.cssText = `
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    left: 2rem;
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--accent-gold), #c89960);
