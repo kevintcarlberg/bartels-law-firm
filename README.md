@@ -1,6 +1,10 @@
 # The Bartels Law Firm, PLLC - Modern Website
 
+[![Live Site](https://img.shields.io/badge/Live%20Site-GitHub%20Pages-success)](https://kevintcarlberg.github.io/bartels-law-firm/)
+
 A modern, professional website redesign for The Bartels Law Firm, PLLC - a premier civil litigation firm serving the greater Seattle area.
+
+**🌐 View Live Site:** [https://kevintcarlberg.github.io/bartels-law-firm/](https://kevintcarlberg.github.io/bartels-law-firm/)
 
 ## 🎯 Project Overview
 
